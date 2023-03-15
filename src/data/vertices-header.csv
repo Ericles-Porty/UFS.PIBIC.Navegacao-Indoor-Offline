@@ -1,0 +1,62 @@
+id_vertex,name,bias,is_cross,category,pox_x,pos_y
+1,#,0,1,#,12,80
+2,#,0,1,#,25,80
+3,Unique,0,0,Fashion,25,70
+4,Lojas Brasil,0,0,Market,25,50
+5,#,0,1,#,55,40
+6,#,0,1,#,65,40
+7,Cacau Show,0,0,Food,55,40
+8,Samsung,0,0,Tech,60,40
+9,#,0,1,#,60,50
+10,JBL,0,0,Tech,90,50
+11,LG,0,0,Tech,110,50
+12,TPLINK,0,0,Tech,125,50
+13,#,0,1,#,130,50
+14,Cinema,0,0,Entertainment,135,30
+15,#,0,1,#,135,20
+16,Kei,0,0,Market,145,20
+17,OnePlus,0,0,Tech,155,20
+18,Galego Do Peixe,0,0,Food,165,20
+19,Steak House,0,0,Food,165,40
+20,BK,0,0,Food,165,55
+21,Mc Donalds,0,0,Food,165,65
+22,#,0,1,#,165,85
+23,#,0,1,#,130,85
+24,POP,0,0,Food,135,90
+25,Honda,0,0,Automotive,135,100
+26,#,0,1,#,145,100
+27,Cooler Master,0,0,Tech,145,105
+28,Jesus High Tech,0,0,Tech,145,120
+29,Estrijoias,0,0,Fashion,155,120
+30,Americanas,0,0,Market,155,145
+31,Magazine Luiza,0,0,Market,125,145
+32,Joalheira Pérola,0,0,Fashion,110,145
+33,ItatechJr,0,0,Tech,90,145
+34,Riot Games,0,0,Games,80,145
+35,My Drunks,0,0,Drink,60,145
+36,Golden Fitness,0,0,Fit,50,145
+37,#,0,1,#,50,135
+38,#,0,1,#,50,120
+39,#,0,1,#,35,110
+40,Hoyoverse,0,0,Games,35,90
+41,Asus,0,0,Tech,35,80
+42,#,0,1,#,35,60
+43,Evolution,0,0,Fit,40,60
+44,Motorola,0,0,Tech,50,60
+45,#,0,1,#,55,50
+46,#,0,1,#,35,50
+47,Renner,0,0,Fashion,80,135
+48,Riachuelo,0,0,Fashion,90,135
+49,#,0,1,#,145,135
+50,Apple,0,0,Tech,25,95
+51,Sky,0,0,Tech,25,105
+52,Logitech,0,0,Tech,25,110
+53,Musicyan,0,0,Music,25,120
+54,Xiaomi,0,0,Tech,85,60
+55,Conecta Imports,0,0,Tech,95,60
+56,LG,0,0,Tech,105,60
+57,Pingo de Ouro,0,0,Fashion,115,60
+58,Yamaha,0,0,Automotive,125,60
+59,#,0,1,#,135,60
+60,#,0,1,#,135,65
+61,#,0,1,#,135,75
