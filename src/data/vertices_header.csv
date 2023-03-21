@@ -1,4 +1,5 @@
-0,Porta,0,1,#,12,80
+id_vertex,name,bias,is_cross,category,pox_x,pos_y
+0,#,0,1,#,12,80
 1,#,0,1,#,25,80
 2,Unique,0,0,Fashion,25,70
 3,Lojas Brasil,0,0,Market,25,50
@@ -8,7 +9,7 @@
 7,Samsung,0,0,Tech,60,40
 8,#,0,1,#,60,50
 9,JBL,0,0,Tech,90,50
-10,Huawei,0,0,Tech,110,50
+10,LG,0,0,Tech,110,50
 11,TPLINK,0,0,Tech,125,50
 12,#,0,1,#,130,50
 13,Cinema,0,0,Entertainment,135,30
