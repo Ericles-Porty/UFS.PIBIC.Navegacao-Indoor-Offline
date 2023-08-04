@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Navegação indor',
+      title: 'NAVEGAÇÃO INDOOR',
       theme: ThemeData(
         fontFamily: 'Poppins',
         useMaterial3: true,
