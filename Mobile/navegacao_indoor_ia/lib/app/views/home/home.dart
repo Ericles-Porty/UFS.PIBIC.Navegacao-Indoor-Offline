@@ -186,11 +186,16 @@ class _HomeState extends State<Home> {
                   height: size.height * 0.05,
                   width: size.width * 0.5,
                   child: ElevatedButton(
-                    
                     onPressed: () {
+                      controller.getPath();
                       List<dynamic> result = json.decode(jsonStateList);
-                      List<Estabelecimento> listState = result.map((e) => Estabelecimento.fromJson(e)).toList();
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => Navigation(listaEstabelecimentos: listState, userOptions: controller.userOptions)));
+                      List<Estabelecimento> listState = result
+                          .map((e) => Estabelecimento.fromJson(e))
+                          .toList();
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => Navigation(
+                              listaEstabelecimentos: listState,
+                              userOptions: controller.userOptions)));
                     },
                     style: ElevatedButton.styleFrom(
                       shadowColor: defaultColor,
@@ -200,7 +205,6 @@ class _HomeState extends State<Home> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
-
                     child: const Text(
                       "INICIAR TRAJETO",
                       style: TextStyle(
