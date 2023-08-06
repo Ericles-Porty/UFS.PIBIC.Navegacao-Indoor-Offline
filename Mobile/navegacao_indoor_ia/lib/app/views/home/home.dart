@@ -8,6 +8,7 @@ import '../../models/estabelecimento.dart';
 import '../../shared/colors.dart';
 import '../../shared/mock/locals.dart';
 import '../../shared/widget/default_space.dart';
+import '../navigation/navigation.dart';
 import 'dropdown_algoritmo.dart';
 import 'dropdown_local_partida.dart';
 
@@ -182,12 +183,15 @@ class _HomeState extends State<Home> {
                 defaultSpace(),
                 defaultSpace(),
                 SizedBox(
-                  
                   height: size.height * 0.05,
                   width: size.width * 0.5,
                   child: ElevatedButton(
                     
-                    onPressed: () => {},
+                    onPressed: () {
+                      List<dynamic> result = json.decode(jsonStateList);
+                      List<Estabelecimento> listState = result.map((e) => Estabelecimento.fromJson(e)).toList();
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => Navigation(listaEstabelecimentos: listState, userOptions: controller.userOptions)));
+                    },
                     style: ElevatedButton.styleFrom(
                       shadowColor: defaultColor,
                       elevation: 6,
@@ -196,6 +200,7 @@ class _HomeState extends State<Home> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
+
                     child: const Text(
                       "INICIAR TRAJETO",
                       style: TextStyle(

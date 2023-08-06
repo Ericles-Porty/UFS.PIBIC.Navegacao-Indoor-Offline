@@ -57,499 +57,66 @@ List<int> route = [
 ];
 
 String jsonStateList = """[
-{
-"id": 0,
-"name": "Porta",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 12,
-"pox_y": 80
-},
-{
-"id": 1,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 25,
-"pox_y": 80
-},
-{
-"id": 2,
-"name": "Unique",
-"bias": 0,
-"is_cross": 0,
-"category": "Fashion",
-"pox_x": 25,
-"pox_y": 70
-},
-{
-"id": 3,
-"name": "Lojas Brasil",
-"bias": 0,
-"is_cross": 0,
-"category": "Market",
-"pox_x": 25,
-"pox_y": 50
-},
-{
-"id": 4,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 25,
-"pox_y": 25
-},
-{
-"id": 5,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 55,
-"pox_y": 25
-},
-{
-"id": 6,
-"name": "Cacau Show",
-"bias": 0,
-"is_cross": 0,
-"category": "Food",
-"pox_x": 55,
-"pox_y": 40
-},
-{
-"id": 7,
-"name": "Samsung",
-"bias": 0,
-"is_cross": 0,
-"category": "Tech",
-"pox_x": 60,
-"pox_y": 40
-},
-{
-"id": 8,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 60,
-"pox_y": 50
-},
-{
-"id": 9,
-"name": "JBL",
-"bias": 0,
-"is_cross": 0,
-"category": "Tech",
-"pox_x": 90,
-"pox_y": 50
-},
-{
-"id": 10,
-"name": "Huawei",
-"bias": 0,
-"is_cross": 0,
-"category": "Tech",
-"pox_x": 110,
-"pox_y": 50
-},
-{
-"id": 11,
-"name": "TPLINK",
-"bias": 0,
-"is_cross": 0,
-"category": "Tech",
-"pox_x": 125,
-"pox_y": 50
-},
-{
-"id": 12,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 135,
-"pox_y": 50
-},
-{
-"id": 13,
-"name": "Cinema",
-"bias": 0,
-"is_cross": 0,
-"category": "Entertainment",
-"pox_x": 135,
-"pox_y": 30
-},
-{
-"id": 14,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 135,
-"pox_y": 20
-},
-{
-"id": 15,
-"name": "Kei",
-"bias": 0,
-"is_cross": 0,
-"category": "Market",
-"pox_x": 145,
-"pox_y": 20
-},
-{
-"id": 16,
-"name": "OnePlus",
-"bias": 0,
-"is_cross": 0,
-"category": "Tech",
-"pox_x": 155,
-"pox_y": 20
-},
-{
-"id": 17,
-"name": "Galego Do Peixe",
-"bias": 0,
-"is_cross": 0,
-"category": "Food",
-"pox_x": 165,
-"pox_y": 20
-},
-{
-"id": 18,
-"name": "Steak House",
-"bias": 0,
-"is_cross": 0,
-"category": "Food",
-"pox_x": 165,
-"pox_y": 40
-},
-{
-"id": 19,
-"name": "BK",
-"bias": 0,
-"is_cross": 0,
-"category": "Food",
-"pox_x": 165,
-"pox_y": 55
-},
-{
-"id": 20,
-"name": "Mc Donalds",
-"bias": 0,
-"is_cross": 0,
-"category": "Food",
-"pox_x": 165,
-"pox_y": 65
-},
-{
-"id": 21,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 165,
-"pox_y": 85
-},
-{
-"id": 22,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 135,
-"pox_y": 85
-},
-{
-"id": 23,
-"name": "POP",
-"bias": 0,
-"is_cross": 0,
-"category": "Food",
-"pox_x": 135,
-"pox_y": 90
-},
-{
-"id": 24,
-"name": "Honda",
-"bias": 0,
-"is_cross": 0,
-"category": "Automotive",
-"pox_x": 135,
-"pox_y": 100
-},
-{
-"id": 25,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 145,
-"pox_y": 100
-},
-{
-"id": 26,
-"name": "Cooler Master",
-"bias": 0,
-"is_cross": 0,
-"category": "Tech",
-"pox_x": 145,
-"pox_y": 105
-},
-{
-"id": 27,
-"name": "Jesus High Tech",
-"bias": 0,
-"is_cross": 0,
-"category": "Tech",
-"pox_x": 145,
-"pox_y": 120
-},
-{
-"id": 28,
-"name": "Estrijoias",
-"bias": 0,
-"is_cross": 0,
-"category": "Fashion",
-"pox_x": 155,
-"pox_y": 120
-},
-{
-"id": 29,
-"name": "Americanas",
-"bias": 0,
-"is_cross": 0,
-"category": "Market",
-"pox_x": 155,
-"pox_y": 145
-},
-{
-"id": 30,
-"name": "Magazine Luiza",
-"bias": 0,
-"is_cross": 0,
-"category": "Market",
-"pox_x": 125,
-"pox_y": 145
-},
-{
-"id": 31,
-"name": "Joalheira Pérola",
-"bias": 0,
-"is_cross": 0,
-"category": "Fashion",
-"pox_x": 110,
-"pox_y": 145
-},
-{
-"id": 32,
-"name": "ItatechJr",
-"bias": 0,
-"is_cross": 0,
-"category": "Tech",
-"pox_x": 90,
-"pox_y": 145
-},
-{
-"id": 33,
-"name": "Riot Games",
-"bias": 0,
-"is_cross": 0,
-"category": "Games",
-"pox_x": 80,
-"pox_y": 145
-},
-{
-"id": 34,
-"name": "My Drunks",
-"bias": 0,
-"is_cross": 0,
-"category": "Drink",
-"pox_x": 60,
-"pox_y": 145
-},
-{
-"id": 35,
-"name": "Golden Fitness",
-"bias": 0,
-"is_cross": 0,
-"category": "Fit",
-"pox_x": 50,
-"pox_y": 145
-},
-{
-"id": 36,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 50,
-"pox_y": 135
-},
-{
-"id": 37,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 50,
-"pox_y": 120
-},
-{
-"id": 38,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 35,
-"pox_y": 110
-},
-{
-"id": 39,
-"name": "Hoyoverse",
-"bias": 0,
-"is_cross": 0,
-"category": "Games",
-"pox_x": 35,
-"pox_y": 90
-},
-{
-"id": 40,
-"name": "Asus",
-"bias": 0,
-"is_cross": 0,
-"category": "Tech",
-"pox_x": 35,
-"pox_y": 80
-},
-{
-"id": 41,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 35,
-"pox_y": 60
-},
-{
-"id": 42,
-"name": "Evolution",
-"bias": 0,
-"is_cross": 0,
-"category": "Fit",
-"pox_x": 40,
-"pox_y": 60
-},
-{
-"id": 43,
-"name": "Motorola",
-"bias": 0,
-"is_cross": 0,
-"category": "Tech",
-"pox_x": 55,
-"pox_y": 60
-},
-{
-"id": 44,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 55,
-"pox_y": 50
-},
-{
-"id": 45,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 35,
-"pox_y": 50
-},
-{
-"id": 46,
-"name": "Renner",
-"bias": 0,
-"is_cross": 0,
-"category": "Fashion",
-"pox_x": 80,
-"pox_y": 135
-},
-{
-"id": 47,
-"name": "Riachuelo",
-"bias": 0,
-"is_cross": 0,
-"category": "Fashion",
-"pox_x": 90,
-"pox_y": 135
-},
-{
-"id": 48,
-"name": "#",
-"bias": 0,
-"is_cross": 1,
-"category": "#",
-"pox_x": 145,
-"pox_y": 135
-},
-{
-"id": 49,
-"name": "Apple",
-"bias": 0,
-"is_cross": 0,
-"category": "Tech",
-"pox_x": 25,
-"pox_y": 90
-},
-{
-"id": 50,
-"name": "Sky",
-"bias": 0,
-"is_cross": 0,
-"category": "Tech",
-"pox_x": 25,
-"pox_y": 105
-},
-{
-"id": 51,
-"name": "Logitech",
-"bias": 0,
-"is_cross": 0,
-"category": "Tech",
-"pox_x": 25,
-"pox_y": 110
-},
-{
-"id": 52,
-"name": "Musicyan",
-"bias": 0,
-"is_cross": 0,
-"category": "Entertainment",
-"pox_x": 25,
-"pox_y": 120
-},
-{
-"id": 53,
-"name": "C&A",
-"bias": 0,
-"is_cross": 0,
-"category": "Fashion",
-"pox_x": 25,
-"pox_y": 135
-},
-{
-"id": 54,
-"name": "Cartel",
-"bias": 0,
-"is_cross": 0,
-"category": "Fashion",
-"pox_x": 25,
-"pox_y": 145
-}
-]""";
+  {"id": 0, "name": "Porta", "category": "#", "pos_x": 12, "pos_y": 80},
+  {"id": 1, "name": "#", "category": "#", "pos_x": 25, "pos_y": 80},
+  {"id": 2, "name": "Unique", "category": "Fashion", "pos_x": 25, "pos_y": 70},
+  {"id": 3, "name": "Lojas Brasil", "category": "Market", "pos_x": 25, "pos_y": 50},
+  {"id": 4, "name": "#", "category": "#", "pos_x": 25, "pos_y": 25},
+  {"id": 5, "name": "#", "category": "#", "pos_x": 55, "pos_y": 25},
+  {"id": 6, "name": "Cacau Show", "category": "Food", "pos_x": 55, "pos_y": 40},
+  {"id": 7, "name": "Samsung", "category": "Tech", "pos_x": 60, "pos_y": 40},
+  {"id": 8, "name": "#", "category": "#", "pos_x": 60, "pos_y": 50},
+  {"id": 9, "name": "JBL", "category": "Tech", "pos_x": 90, "pos_y": 50},
+  {"id": 10, "name": "Huawei", "category": "Tech", "pos_x": 110, "pos_y": 50},
+  {"id": 11, "name": "TPLINK", "category": "Tech", "pos_x": 125, "pos_y": 50},
+  {"id": 12, "name": "Praça de Alimentação", "category": "Food", "pos_x": 135, "pos_y": 50},
+  {"id": 13, "name": "Cinema", "category": "Entertainment", "pos_x": 135, "pos_y": 30},
+  {"id": 14, "name": "#", "category": "#", "pos_x": 135, "pos_y": 20},
+  {"id": 15, "name": "Kei", "category": "Market", "pos_x": 145, "pos_y": 20},
+  {"id": 16, "name": "OnePlus", "category": "Tech", "pos_x": 155, "pos_y": 20},
+  {"id": 17, "name": "Galego Do Peixe", "category": "Food", "pos_x": 165, "pos_y": 20},
+  {"id": 18, "name": "Steak House", "category": "Food", "pos_x": 165, "pos_y": 40},
+  {"id": 19, "name": "BK", "category": "Food", "pos_x": 165, "pos_y": 55},
+  {"id": 20, "name": "Mc Donalds", "category": "Food", "pos_x": 165, "pos_y": 65},
+  {"id": 21, "name": "#", "category": "#", "pos_x": 165, "pos_y": 85},
+  {"id": 22, "name": "#", "category": "#", "pos_x": 135, "pos_y": 85},
+  {"id": 23, "name": "POP", "category": "Food", "pos_x": 135, "pos_y": 90},
+  {"id": 24, "name": "Honda", "category": "Automotive", "pos_x": 135, "pos_y": 100},
+  {"id": 25, "name": "#", "category": "#", "pos_x": 145, "pos_y": 100},
+  {"id": 26, "name": "Cooler Master", "category": "Tech", "pos_x": 145, "pos_y": 105},
+  {"id": 27, "name": "Jesus High Tech", "category": "Tech", "pos_x": 145, "pos_y": 120},
+  {"id": 28, "name": "Estrijoias", "category": "Fashion", "pos_x": 155, "pos_y": 120},
+  {"id": 29, "name": "Americanas", "category": "Market", "pos_x": 155, "pos_y": 145},
+  {"id": 30, "name": "Magazine Luiza", "category": "Market", "pos_x": 125, "pos_y": 145},
+  {"id": 31, "name": "Joalheira Pérola", "category": "Fashion", "pos_x": 110, "pos_y": 145},
+  {"id": 32, "name": "ItatechJr", "category": "Tech", "pos_x": 90, "pos_y": 145},
+  {"id": 33, "name": "Riot Games", "category": "Games", "pos_x": 80, "pos_y": 145},
+  {"id": 34, "name": "My Drunks", "category": "Drink", "pos_x": 60, "pos_y": 145},
+  {"id": 35, "name": "Golden Fitness", "category": "Fit", "pos_x": 50, "pos_y": 145},
+  {"id": 36, "name": "#", "category": "#", "pos_x": 50, "pos_y": 135},
+  {"id": 37, "name": "#", "category": "#", "pos_x": 50, "pos_y": 120},
+  {"id": 38, "name": "#", "category": "#", "pos_x": 35, "pos_y": 110},
+  {"id": 39, "name": "Hoyoverse", "category": "Games", "pos_x": 35, "pos_y": 90},
+  {"id": 40, "name": "Asus", "category": "Tech", "pos_x": 35, "pos_y": 80},
+  {"id": 41, "name": "#", "category": "#", "pos_x": 35, "pos_y": 60},
+  {"id": 42, "name": "Evolution", "category": "Fit", "pos_x": 40, "pos_y": 60},
+  {"id": 43, "name": "Motorola", "category": "Tech", "pos_x": 55, "pos_y": 60},
+  {"id": 44, "name": "#", "category": "#", "pos_x": 55, "pos_y": 50},
+  {"id": 45, "name": "#", "category": "#", "pos_x": 35, "pos_y": 50},
+  {"id": 46, "name": "Renner", "category": "Fashion", "pos_x": 80, "pos_y": 135},
+  {"id": 47, "name": "Riachuelo", "category": "Fashion", "pos_x": 90, "pos_y": 135},
+  {"id": 48, "name": "#", "category": "#", "pos_x": 145, "pos_y": 135},
+  {"id": 49, "name": "Apple", "category": "Tech", "pos_x": 25, "pos_y": 90},
+  {"id": 50, "name": "Sky", "category": "Tech", "pos_x": 25, "pos_y": 105},
+  {"id": 51, "name": "Logitech", "category": "Tech", "pos_x": 25, "pos_y": 110},
+  {"id": 52, "name": "Musicyan", "category": "Music", "pos_x": 25, "pos_y": 120},
+  {"id": 53, "name": "Xiaomi", "category": "Tech", "pos_x": 85, "pos_y": 60},
+  {"id": 54, "name": "Conecta Imports", "category": "Tech", "pos_x": 95, "pos_y": 60},
+  {"id": 55, "name": "LG", "category": "Tech", "pos_x": 105, "pos_y": 60},
+  {"id": 56, "name": "Pingo de Ouro", "category": "Fashion", "pos_x": 115, "pos_y": 60},
+  {"id": 57, "name": "Yamaha", "category": "Automotive", "pos_x": 125, "pos_y": 60},
+  {"id": 58, "name": "#", "category": "#", "pos_x": 135, "pos_y": 60},
+  {"id": 59, "name": "#", "category": "#", "pos_x": 135, "pos_y": 65},
+  {"id": 60, "name": "Bobs", "category": "Food", "pos_x": 135, "pos_y": 75}
+]
+""";

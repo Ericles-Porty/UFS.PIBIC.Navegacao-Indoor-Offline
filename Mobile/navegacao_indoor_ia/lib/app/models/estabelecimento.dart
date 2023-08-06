@@ -1,8 +1,6 @@
 class Estabelecimento {
   final int id;
   String name;
-  final int bias;
-  final int isCross;
   final String category;
   final int poxX;
   final int poxY;
@@ -10,8 +8,6 @@ class Estabelecimento {
   Estabelecimento({
     required this.id,
     required this.name,
-    required this.bias,
-    required this.isCross,
     required this.category,
     required this.poxX,
     required this.poxY,
@@ -21,11 +17,9 @@ class Estabelecimento {
     return Estabelecimento(
       id: json['id'],
       name: json['name'],
-      bias: json['bias'],
-      isCross: json['is_cross'],
       category: json['category'],
-      poxX: json['pox_x'],
-      poxY: json['pox_y'],
+      poxX: json['pos_x'],
+      poxY: json['pos_y'],
     );
   }
 
@@ -33,11 +27,9 @@ class Estabelecimento {
     final map = <String, dynamic>{};
     map['id'] = id;
     map['name'] = name;
-    map['bias'] = bias;
-    map['is_cross'] = isCross;
     map['category'] = category;
-    map['pox_x'] = poxX;
-    map['pox_y'] = poxY;
+    map['pos_x'] = poxX;
+    map['pos_y'] = poxY;
     return map;
   }
 }

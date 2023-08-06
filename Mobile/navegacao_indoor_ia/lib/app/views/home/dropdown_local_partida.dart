@@ -3,7 +3,6 @@ import 'package:navegacao_indoor_ia/app/models/estabelecimento.dart';
 
 import '../../models/user_options.dart';
 import '../../shared/colors.dart';
-import '../../shared/widget/default_space.dart';
 
 class DropdownLocalPartida extends StatefulWidget {
   final UserOptions userOptions;
