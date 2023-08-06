@@ -22,12 +22,12 @@ class _NavigationState extends State<Navigation> {
 
   void _incrementCounter() {
     setState(() {
-      if (_counter < route.length - 1)
+      if (_counter < route.length - 2) {
         _counter++;
-      else {
+      } else {
         showDialog<String>(
           context: context,
-          builder: (BuildContext context) => AlertDialog(
+          builder: (BuildContext context) => AlertDialog(title: Text("VOCÊ CHEGOU AO DESTINO!!", style: defaultTextStyle.copyWith(color: Colors.white)),
             backgroundColor: const Color(0xFF555D73),
             content: const Text(
               'DESEJA GERAR NOVA\nROTA DE NAVEGAÇÃO?',
@@ -95,7 +95,7 @@ class _NavigationState extends State<Navigation> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(widget.userOptions.estabelecimentoPartida.name, style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15, color: defaultColor)),
-                          Icon(Icons.arrow_forward_outlined,size: 20,weight: 1,color: defaultColor),
+                          Icon(Icons.arrow_forward_outlined, size: 20, weight: 1, color: defaultColor),
                           Text(widget.userOptions.estabelecimentoChegada.name, style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15, color: defaultColor)),
                         ],
                       )
