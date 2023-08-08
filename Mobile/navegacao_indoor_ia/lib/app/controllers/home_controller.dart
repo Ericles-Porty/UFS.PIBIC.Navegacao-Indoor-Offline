@@ -26,9 +26,22 @@ class HomeController extends ChangeNotifier {
   }
 //https://graph-with-q-learning.ericles-porty.repl.co/path/1/2/QLearning?max_interests=0&interests=aa
   void getPath() async {
-    String baseUrl = "https://graph-with-q-learning.ericles-porty.repl.co";
-
-    Response response = await dio.get( baseUrl + "/path/" + userOptions.estabelecimentoPartida.id.toString() + "/" + userOptions.estabelecimentoChegada.id.toString() + "/" + userOptions.algoritmo, queryParameters: {"max_interests": userOptions.quantidade_interesses, "interests": userOptions.interesses.join(",")});
+    String baseUrl = "http://168.75.83.4:1234";
+    String url;
+    url = baseUrl;
+    url += "/path";
+    url += "/" + userOptions.estabelecimentoPartida.id.toString();
+    url += "/" + userOptions.estabelecimentoChegada.id.toString();
+    url += "/" + userOptions.algoritmo;
+    if (userOptions.interesses.length > 0) {
+      url += "?max_interests=" +
+          userOptions.quantidade_interesses.toString() +
+          "&interests=" +
+          userOptions.interesses.join(",");
+    }
+    
+    print(url);
+    Response response = await dio.get(url);
     print(response.data);
   }
 
