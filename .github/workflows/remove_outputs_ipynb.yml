@@ -25,18 +25,32 @@ jobs:
 
     - name: Remove outputs from notebooks
       run: |
-        for notebook in $(git diff --name-only origin/main | grep '\.ipynb$'); do
-          tmpfile=$(mktemp)
-          python $GITHUB_WORKSPACE/remove_outputs.py $notebook $tmpfile
-          mv $tmpfile $notebook
-          git add $notebook
-        done
+        changed_files=$(git diff --name-only origin/main | grep '\.ipynb$')
+        if [ -n "$changed_files" ]; then
+          for notebook in $changed_files; do
+            resources_changed=$(git diff --unified=0 $notebook | grep '^[-+][^-+]# Resources$')
+            if [ -n "$resources_changed" ]; then
+              tmpfile=$(mktemp)
+              python $GITHUB_WORKSPACE/remove_outputs.py $notebook $tmpfile
+              mv $tmpfile $notebook
+              git add $notebook
+            else
+              echo "No resource changes found in $notebook."
+            fi
+          done
+        else
+          echo "No notebook files with changes found."
+        fi
       env:
         GITHUB_WORKSPACE: ${{ github.workspace }}
 
     - name: Commit changes
       run: |
-        git config user.name "GitHub Actions"
-        git config user.email "actions@users.noreply.github.com"
-        git commit -m "Remove notebook outputs [skip ci]"
-        git push
+        if git diff-index --quiet HEAD --; then
+          echo "No changes to commit."
+        else
+          git config user.name "GitHub Actions"
+          git config user.email "actions@users.noreply.github.com"
+          git commit -m "Remove notebook outputs [skip ci]"
+          git push
+        fi
