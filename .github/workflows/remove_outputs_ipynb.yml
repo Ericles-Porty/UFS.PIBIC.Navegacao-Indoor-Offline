@@ -23,24 +23,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install nbconvert
 
-    - name: Remove outputs from notebooks
+    - name: Check for and remove notebook outputs
       run: |
-        changed_files=$(git diff --name-only origin/main | grep '\.ipynb$')
-        if [ -n "$changed_files" ]; then
-          for notebook in $changed_files; do
-            resources_changed=$(git diff --unified=0 $notebook | grep '^[-+][^-+]# Resources$')
-            if [ -n "$resources_changed" ]; then
-              tmpfile=$(mktemp)
-              python $GITHUB_WORKSPACE/remove_outputs.py $notebook $tmpfile
-              mv $tmpfile $notebook
-              git add $notebook
-            else
-              echo "No resource changes found in $notebook."
-            fi
-          done
-        else
-          echo "No notebook files with changes found."
-        fi
+        for notebook in $(git diff --name-only origin/main | grep '\.ipynb$'); do
+          outputs_removed=$(python $GITHUB_WORKSPACE/check_remove_outputs.py "$notebook")
+          if [ "$outputs_removed" = "true" ]; then
+            tmpfile=$(mktemp)
+            python $GITHUB_WORKSPACE/remove_outputs.py "$notebook" "$tmpfile"
+            mv "$tmpfile" "$notebook"
+            git add "$notebook"
+          fi
+        done
       env:
         GITHUB_WORKSPACE: ${{ github.workspace }}
 
