@@ -4,7 +4,7 @@ import '../models/estabelecimento.dart';
 import '../models/user_options.dart';
 
 class HomeController extends ChangeNotifier {
-  final Dio dio = Dio();
+  Dio dio = Dio();
   late UserOptions userOptions;
   final List<Estabelecimento> listEstabelecimento;
   final List<String> listAlgoritmo = [
@@ -41,6 +41,11 @@ class HomeController extends ChangeNotifier {
     }
     
     print(url);
+    dio.options.headers["Access-Control-Allow-Origin"] = "*";
+    dio.options.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS";
+    dio.options.headers["Access-Control-Allow-Headers"] =
+        "Origin, Content-Type, Accept, Authorization, X-Request-With";
+    dio.options.headers["Content-Type"] = "application/json";
     Response response = await dio.get(url);
     print(response.data);
   }
