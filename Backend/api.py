@@ -220,96 +220,96 @@ def get_path_rl_interest(start_id: int, goal_id: int, max_interests: int,
 # full_run(algorithm=QLearningAgent)
 # full_run(algorithm=SarsaAgent)
 
-# app = FastAPI(swagger_ui_parameters={"defaultModelsExpandDepth": -1},
-#               debug=True)
+app = FastAPI(swagger_ui_parameters={"defaultModelsExpandDepth": -1},
+              debug=True)
 
 
-# @app.get("/path/{id_origin}/{id_target}/{algorithm}", tags=["Path"])
-# async def get_path_request(
-#     id_origin: int,
-#     id_target: int,
-#     algorithm: Literal["QLearning", "Sarsa", "Astar", "Largura",
-#                        "Profundidade"] = "QLearning",
-#     max_interests: int = 0,
-#     interests: str | None = Query(
-#         None,
-#         description=
-#         "Uma lista de palavras separadas por vírgula. Interesses disponíveis: "
-#         + ", ".join(list_of_interests_available))):
+@app.get("/path/{id_origin}/{id_target}/{algorithm}", tags=["Path"])
+async def get_path_request(
+    id_origin: int,
+    id_target: int,
+    algorithm: Literal["QLearning", "Sarsa", "Astar", "Largura",
+                       "Profundidade"] = "QLearning",
+    max_interests: int = 0,
+    interests: str | None = Query(
+        None,
+        description=
+        "Uma lista de palavras separadas por vírgula. Interesses disponíveis: "
+        + ", ".join(list_of_interests_available))):
 
-#     path = []
-#     algorithm = algorithm.lower()
+    path = []
+    algorithm = algorithm.lower()
 
-#     # sanitize the inputs of interests
-#     if interests is not None:
-#         interests = interests.split(",")
-#         interests = [i.lower().strip() for i in interests]
+    # sanitize the inputs of interests
+    if interests is not None:
+        interests = interests.split(",")
+        interests = [i.lower().strip() for i in interests]
 
-#     # check if the algorithm is a search algorithm
-#     if algorithm in ["largura", "profundidade", "astar"]:
-#         # verify if the user wants to get the path without interests
-#         if interests is None:
-#             path, total_distance = get_path_search(start_id=id_origin,
-#                                                    goal_id=id_target,
-#                                                    algorithm=algorithm)
-#         # otherwise, get the path with interests
-#         else:
-#             path, total_distance = get_path_search_interest(
-#                 start_id=id_origin,
-#                 goal_id=id_target,
-#                 max_interests=max_interests,
-#                 interests=interests,
-#                 algorithm=algorithm)
+    # check if the algorithm is a search algorithm
+    if algorithm in ["largura", "profundidade", "astar"]:
+        # verify if the user wants to get the path without interests
+        if interests is None:
+            path, total_distance = get_path_search(start_id=id_origin,
+                                                   goal_id=id_target,
+                                                   algorithm=algorithm)
+        # otherwise, get the path with interests
+        else:
+            path, total_distance = get_path_search_interest(
+                start_id=id_origin,
+                goal_id=id_target,
+                max_interests=max_interests,
+                interests=interests,
+                algorithm=algorithm)
 
-#     # check if the algorithm is a reinforcement learning algorithm
-#     if algorithm in ["qlearning", "sarsa"]:
-#         # verify if the user wants to get the path without interests
-#         if interests is None:
-#             path, total_distance = get_path_rl(start_id=id_origin,
-#                                                goal_id=id_target,
-#                                                algorithm=algorithm)
-#         # otherwise, get the path with interests
-#         else:
-#             path, total_distance = get_path_rl_interest(
-#                 start_id=id_origin,
-#                 goal_id=id_target,
-#                 max_interests=max_interests,
-#                 interests=interests,
-#                 algorithm=algorithm)
+    # check if the algorithm is a reinforcement learning algorithm
+    if algorithm in ["qlearning", "sarsa"]:
+        # verify if the user wants to get the path without interests
+        if interests is None:
+            path, total_distance = get_path_rl(start_id=id_origin,
+                                               goal_id=id_target,
+                                               algorithm=algorithm)
+        # otherwise, get the path with interests
+        else:
+            path, total_distance = get_path_rl_interest(
+                start_id=id_origin,
+                goal_id=id_target,
+                max_interests=max_interests,
+                interests=interests,
+                algorithm=algorithm)
 
-#     # return a json with the path and the total distance
-#     return {
-#         "path": path,
-#         "total_distance": total_distance,
-#         "steps": len(path) - 1
-#     }
-
-
-# @app.get("/", include_in_schema=False)
-# async def root():
-#     return RedirectResponse(url="/docs")
+    # return a json with the path and the total distance
+    return {
+        "path": path,
+        "total_distance": total_distance,
+        "steps": len(path) - 1
+    }
 
 
-# def config_openapi():
-#     if app.openapi_schema:
-#         return app.openapi_schema
-#     openapi_schema = get_openapi(
-#         title="Api for Bias Pathfinding",
-#         version="1.0.0",
-#         description=
-#         "Essa é uma api para encontrar caminhos com viés em ambientes indoor.",
-#         routes=app.routes,
-#     )
-
-#     app.openapi_schema = openapi_schema
-
-#     return app.openapi_schema
+@app.get("/", include_in_schema=False)
+async def root():
+    return RedirectResponse(url="/docs")
 
 
-# app.openapi = config_openapi
+def config_openapi():
+    if app.openapi_schema:
+        return app.openapi_schema
+    openapi_schema = get_openapi(
+        title="Api for Bias Pathfinding",
+        version="1.0.0",
+        description=
+        "Essa é uma api para encontrar caminhos com viés em ambientes indoor.",
+        routes=app.routes,
+    )
 
-# if __name__ == "__main__":
-#     import uvicorn
-#     uvicorn.run(app, host="localhost", port=8000)
+    app.openapi_schema = openapi_schema
+
+    return app.openapi_schema
+
+
+app.openapi = config_openapi
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="localhost", port=8000)
 
 
