@@ -8,7 +8,7 @@ from ReinforcmentLearning import *
 
 list_of_interests_available = [
     "Tech", "Food", "Entertainment", "Fashion", "Market", "Automotive",
-    "Drink", "Fit", "Games"
+    "Drink", "Fit", "Games", "Music"
 ]
 
 edges_dict = {}
